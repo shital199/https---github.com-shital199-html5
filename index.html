@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="assets/css/styles.css" />
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+      <title>card with sass</title>
+</head>
+<!-- <body style="background-color: #ab99ca;">
+
+            <div class="card">
+                  <img src="https://images.unsplash.com/photo-1524749292158-7540c2494485?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fGRldmVsb3BlcnN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="">
+                  <div class="card_content">
+                        <h2 class="card_title">Lorem</h2>
+                        <p class="card_description">Lorem, ipsum dolor sit amet consectetur adipisicing elit.Rerum porro dolores sapiente.</p>
+                  </div>
+            </div>
+
+            <div class="card card_dark">
+                  <img src="https://media.istockphoto.com/photos/put-more-in-get-more-out-picture-id1291318636?b=1&k=20&m=1291318636&s=170667a&w=0&h=UvVIk7wwkN3X9OFm8gBlWWviV5vAjfrq2ejYP30JmnA=" alt="">
+                  <div class="card_content">
+                        <h2 class="card_title">Lorem</h2>
+                        <p class="card_description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.Atque amet obcaecati nihil.</p>
+                  </div>
+            </div> -->
+
+<body>
+      
+      <div class="main-div bg-light-gray">
+            <div class="card">
+                  <div class="card-first-item">
+                        <h3 class="text-cyan mb-4">Join our community</h3>
+                        <h5 class="text-bright-yellow mb-2">30-day, hassle-free money back guarantee
+                        </h5>
+                        <h6 class="text-grayish-blue mb-0">Gain access to our full library of tutorials along with expert code
+                              reviews. Perfect for any developers who are serious about honing
+                              their skills.
+                        </h6>
+                  </div>
+                  <div class="card-second-item">
+                        <div class="first">
+                              <h5 class="mb-4 text-light-gray">Monthly Subscription</h5>
+                              <!-- <div style="display: flex"> -->
+                              <h5 class="mb-4 text-light-gray">$29
+                              <span style="width: 100%">per month</span></h5>
+                              <h6 class="mb-4 text-light-gray">Full access for less than $1 a day </h6>
+                              <button class="d-flex align-items-center p-3 text-light-gray bg-bright-yellow"
+                            >
+                              <i class="bi bi-github fs-22 mr-2"></i>
+                              <p class="mb-0 fs-16 fw-bold">Sign Up</p>
+                            </button>
+                              <!-- </div> -->
+                        </div>
+                        <div class="second">
+                              <h5 class="mb-4 text-light-gray">Why Us </h5>
+                              <!-- <div style="display: flex"> -->
+                              <span class="mb-4 text-light-gray">Tutorials by industry experts</span>
+                              <span class="mb-4 text-light-gray">Peer & expert code review </span>
+                              <span class="mb-4 text-light-gray">Coding exercies</span>
+                              <span class="mb-4 text-light-gray">Access to our GitHub repot</span>
+                              <span class="mb-4 text-light-gray">Community forum</span>
+                              <span class="mb-4 text-light-gray">Flashcard decks</span>
+                              <span class="mb-4 text-light-gray">videos every week</span>
+                        <!-- </div> -->
+
+
+                        </div>
+
+                  </div>
+            </div>
+      </div>
+
+
+      
+      function appendRow(){
+            let cell,firstRow,row;
+          let table=document.getElementById("tbl");
+          firstRow=table.rows[0];
+          row=table.insertRow(-1);
+          row.className="tr";
+          cell=row.insertCell(-1);
+          cell.innerHTML=(table.rows.length-1);
+          for (let i=1;i<firstRow.cells.length;i++){
+            cell=row.insertCell(-1)
+            switch (i){
+              case 1:
+                cell.innerHTML="a";
+                break;
+              case 2:
+                cell.innerHTML="2";
+                break;
+              case 3:
+                cell.innerHTML="c";
+                break;  
+              case 4:
+                cell.innerHTML="3";
+                break;        
+            }
+          }  
+        }
+        function appendRowTop(){
+            let cell,firstRow,row;
+          let table=document.getElementById("tbl");
+          firstRow=table.rows[0];
+          row=table.insertRow(1);
+          row.className="tr";
+          cell=row.insertCell(-1);
+          cell.innerHTML="1";
+          for (let i=0;i<firstRow.cells.length-1;i++){
+            cell=row.insertCell(-1)
+          } 
+          for (let i=2;i<table.rows.length;i++){
+            table.rows[i].cells[0].innerHTML=i;
+          }
+        }
+        <table id="tbl">
+                <tr>
+                    <th>S. No.</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>City</th>
+                    <th>Country</th>
+                </tr>
+                <tr class="tr">
+                    <td>1</td>
+                    <td>Bill</td>
+                    <td>Gates</td>
+                    <td>Washington</td>
+                    <td>U.S</td>
+                </tr>
+                <tr class="tr">
+                    <td>2</td>
+                    <td>Elon</td>
+                    <td>Mask</td>
+                    <td>Pretoria</td>
+                    <td>South Africa</td>
+                </tr>
+            </table>
+            <div onclick="appendRow()" class="btn1">
+                <button><b>Add row to bottom</b></button>
+            </div>
+            <div onclick="appendRowTop()">
+                <button class="btn2"><b>Add row to top</b></button>
+            </div>
+              
+</body>
+
+</html>
+
+    <!-- <div class="container ">
+        <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4 cardBlock ">
+            <img src="./assets/img/image-qr-code.png" alt="" width="90%" class=" img m-auto d-flex pt-4">
+        <div class="card-body text-center">
+                <h4 class=" qrobject1 text-grayish-dark-blue">Improve your front-end <br>
+                    skill by building projects</h4>
+                <p class=" qrobject text-grayish-blue">Scan the QR code for visit Frontend<br>
+                    Mentor and take your coding skills to<br>
+                    the next level</p>
+            </div>
+    
+        <div class="col-sm-4"></div>
+      </div>
+      </div>
+      </div> -->
+    
